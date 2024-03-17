@@ -3,11 +3,11 @@ import logo from "../../assets/image/logotype.svg";
 function PageHeader() {
     return (
         <header>
-            {/* <UpperHeader /> */}
             <MainHeader />
         </header>
     );
 }
+
 
 
 const links = [
@@ -37,15 +37,17 @@ const links = [
     }
 ];
 
-// import signin from "../../assets/image/signin.svg"
 function MainHeader() {
     const linksContent = links.map((elem) => {
         return (<Link url={elem.url} text={elem.text} />)
     });
-
+    const burgerlink = links.map((elem) => {
+        return (<LinkBurger url={elem.url} text={elem.text} />)
+    });
     return (
-        <header className="mb-10 ">
+        <header className="mb-10">
             <div className="container px-14 py-5 flex items-center">
+                {/* Logo */}
                 <div className="mr-auto">
                     <a href="#">
                         <svg width="64" height="68" viewBox="0 0 64 68" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,10 +69,11 @@ function MainHeader() {
                         </svg>
                     </a>
                 </div>
-                <nav className="flex space-x-10">
+                <nav className="hidden lg:flex space-x-10">
                     {linksContent}
                 </nav>
-                <div className="ml-10 rounded-full border border-black p-1.5 border-sky-400">
+                {/* Signin */}
+                <div className="ml-10 rounded-full border p-1.5 border-sky-400">
                     <a href="#">
                         <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.6667 19H2.33334C1.59696 19 1 18.4482 1 17.7674C1 15.7287 2.36827 13.9039 4.43344 13.1884L4.84346 13.0463C7.52346 12.1178 10.4765 12.1178 13.1565 13.0463L13.5666 13.1884C15.6317 13.9039 17 15.7287 17 17.7674C17 18.4482 16.403 19 15.6667 19Z" stroke="#163152" stroke-linecap="square" stroke-linejoin="round"/>
@@ -78,6 +81,21 @@ function MainHeader() {
                         </svg>
                     </a>
                 </div>
+                {/* Hamburger menu */}
+                <button className="ml-7 space-y-1 group lg:hidden">
+                    <div className="w-6 h-1 bg-sky-700"></div>
+                    <div className="w-6 h-1 bg-sky-700"></div>
+                    <div className="w-6 h-1 bg-sky-700"></div>
+                    {/* Menu */}
+                    <div className="bg-white w-screen pb-10 absolute -top-full group-focus:top-0 right-0 duration-150
+                    flex flex-col space-y-3 justify-end">
+                        <button className=" px-10 py-8 relative ml-auto">
+                            <div className="w-6 h-1 rotate-45 absolute bg-black"></div>
+                            <div className="w-6 h-1 -rotate-45 absolute bg-black"></div>
+                        </button>
+                        {burgerlink}
+                    </div>
+                </button>
             </div>
         </header>
     );
@@ -86,6 +104,12 @@ function MainHeader() {
 function Link({url, text}) {
     return (
         <div><a href={url}>{text}</a></div>
+    );
+}
+
+function LinkBurger({url, text}) {
+    return (
+        <div className="flex justify-center w-full py-4 hover:bg-blue-100"><a className="text-blue-500" href={url}>{text}</a></div>
     );
 }
 

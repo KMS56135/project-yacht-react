@@ -1,7 +1,10 @@
 import './App.css';
 import PageHeader from './components/Header/PageHeader';
 import Hero from './components/Hero/Hero';
-import Article from './components/Article/Article';
+import Article from './components/Blog/Blog';
+import Rent from './components/Rent/Rent';
+import Gallery from './components/Gallery/Gallery';
+
 
 function App() {
   return (
@@ -9,6 +12,8 @@ function App() {
       <PageHeader />
       <Hero />
       <Article />
+      <Rent />
+      <Gallery />
     </div>
   );
 }
