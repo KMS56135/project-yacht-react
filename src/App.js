@@ -13,7 +13,7 @@ function App() {
       <Hero />
       <Article />
       <Rent />
-      <Gallery />
+      <Gallery/>
     </div>
   );
 }

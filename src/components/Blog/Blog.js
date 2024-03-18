@@ -24,7 +24,7 @@ function Blog() {
                     </div>
                 </div>
             </article>
-            <article>
+            <article className="mb-28">
                 <div>
                     <div className="container px-14">
                         <div className="mb-2 block">

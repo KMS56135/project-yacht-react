@@ -91,7 +91,7 @@ function Rent() {
             />)
         });
     return  (
-        <section className="mb-128">
+        <section className="mb-28">
             <div className="container px-14">
                 {cardContent}
             </div>
@@ -102,14 +102,11 @@ function Rent() {
 
 function Card ({id, imageUrl, title, description,
     advantages, price}) {
-    const advantagesJsx = advantages.map(element => {
-        return(
-            <li>{advantages}</li>
+    const advantagesList = advantages.map((element) => {
+        return (
+            <ul><li>{element}</li></ul>
         )
     });
-
-
-
     return (
         <div key={id} className="p-6">
             <div className="mb-5">
@@ -118,7 +115,7 @@ function Card ({id, imageUrl, title, description,
             <h2 className="mb-4">{title}</h2>
             <p className="mb-3">{description}</p>
             <div className="mb-7">
-                <div>{advantages}</div>
+                <div>{advantagesList}</div>
             </div>
             <div className="flex justify-between">
                 <div>Цена:</div>

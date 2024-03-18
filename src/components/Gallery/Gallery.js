@@ -1,17 +1,36 @@
-import galleryImage from "../../assets/image/Gallery/gallery-photo-1.webp";
+import React from "react";
+import Slider from "react-slick";
 
-function Gallery () {
-    return (
-        <section>
-            <h2>Галерея</h2>
-            <div className="px-14">
-                <picture>
-                    <source srcSet="" media=""/>
-                    <img src={galleryImage}/>
-                </picture>
-            </div>
-        </section>
-    );
+function Gallery() {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  return (
+    <Slider {...settings}>
+      <div>
+        <h3>1</h3>
+      </div>
+      <div>
+        <h3>2</h3>
+      </div>
+      <div>
+        <h3>3</h3>
+      </div>
+      <div>
+        <h3>4</h3>
+      </div>
+      <div>
+        <h3>5</h3>
+      </div>
+      <div>
+        <h3>6</h3>
+      </div>
+    </Slider>
+  );
 }
 
 export default Gallery;
