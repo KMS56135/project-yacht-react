@@ -10,11 +10,13 @@ const cards = [
         imageUrl: card1,
         title: "Катер Pacific 7-13",
         description: "Pacific длиной 12 метров и шириной 4.6 метра, вместимостью 8 человек",
-        advantages1: "1 каюта", 
-        advantages2: "2 спальных места", 
-        advantages3: "аудиосистема, кондиционер", 
-        advantages4: "холодильник, микроволновка", 
-        advantages5: "туалет",
+        advantages: [
+            "1 каюта", 
+            "2 спальных места", 
+            "аудиосистема, кондиционер", 
+            "холодильник, микроволновка", 
+            "туалет"
+        ],
         price: "11 000 ₽/час",
     },
     {
@@ -22,11 +24,13 @@ const cards = [
         imageUrl: card2,
         title: "Катер 60 Manhattan",
         description: "Двухпалубное судно VIP уровня длиной 20 метров, вместимостью 10 человек",
-        advantages1: "6 кают", 
-        advantages2: "носовая часть с огромной подушкой", 
-        advantages3: "просторный флайбридж", 
-        advantages4: "оборудованная кухня", 
-        advantages5: "джакузи",
+        advantages: [
+            "6 кают", 
+            "носовая часть с огромной подушкой", 
+            "просторный флайбридж", 
+            "оборудованная кухня", 
+            "джакузи",
+        ],
         price: "25 000 ₽/час",
     },
     {
@@ -34,11 +38,13 @@ const cards = [
         imageUrl: card3,
         title: "Катер Starfisher 34",
         description: "Моторная яхта длиной 11 метрови вместимостью до 8 человек",
-        advantages1: "4 каюты", 
-        advantages2: "6 спальных мест", 
-        advantages3: "аудиосистема, кондиционер", 
-        advantages4: "охолодильник, микроволновка", 
-        advantages5: "ддуш, туалет",
+        advantages: [
+            "4 каюты", 
+            "6 спальных мест", 
+            "аудиосистема, кондиционер", 
+            "охолодильник, микроволновка", 
+            "ддуш, туалет",
+        ],
         price: "18 000 ₽/час",
     },
     {
@@ -46,11 +52,13 @@ const cards = [
         imageUrl: card4,
         title: "Катер Pacific 7-13",
         description: "Катер Pacific длиной 12 метров и шириной 4.6 метра, вместимостью 8 человек",
-        advantages1: "1 каюта", 
-        advantages2: "2 спальных места", 
-        advantages3: "аудиосистема, кондиционер", 
-        advantages4: "холодильник, микроволновка", 
-        advantages5: "туалет",
+        advantages: [
+            "1 каюта",
+            "2 спальных места", 
+            "аудиосистема, кондиционер", 
+            "холодильник, микроволновка", 
+            "туалет",
+        ],
         price: "11 000 ₽/час",
     },
     {
@@ -58,31 +66,30 @@ const cards = [
         imageUrl: card5,
         title: "Катер Atlantic 3000",
         description: "Катер Atlantic длиной 14 метров и вместимостью до 6 человек",
-        advantages1: "2 каюты", 
-        advantages2: "4 спальных места", 
-        advantages3: "просторный флайбридж", 
-        advantages4: "оборудованная кухня", 
-        advantages5: "душ, туалет",
+        advantages: [
+            "2 каюты", 
+            "4 спальных места", 
+            "просторный флайбридж", 
+            "оборудованная кухня", 
+            "душ, туалет",
+        ],
         price: "15 000 ₽/час",
     },
 ];
 
 function Rent() {
-    const cardContent = cards.map((elem) => {
-        return (
-        <Card
-            id={elem.id}
-            imageUrl={elem.imageUrl}
-            title={elem.title}
-            description={elem.description}
-            advantages1={elem.advantages1}
-            advantages2={elem.advantages2}
-            advantages3={elem.advantages3}
-            advantages4={elem.advantages4}
-            advantages5={elem.advantages5}
-            price={elem.price}
-        />)
-    });
+    const cardContent = cards.map(
+        (elem) => {
+            return (
+                <Card
+                    id={elem.id}
+                    imageUrl={elem.imageUrl}
+                    title={elem.title}
+                    description={elem.description}
+                    advantages={elem.advantages}
+                    price={elem.price}
+            />)
+        });
     return  (
         <section className="mb-128">
             <div className="container px-14">
@@ -92,9 +99,17 @@ function Rent() {
     );
 }
 
+
 function Card ({id, imageUrl, title, description,
-    advantages1, advantages2, advantages3,
-    advantages4, advantages5, price}) {
+    advantages, price}) {
+    const advantagesJsx = advantages.map(element => {
+        return(
+            <li>{advantages}</li>
+        )
+    });
+
+
+
     return (
         <div key={id} className="p-6">
             <div className="mb-5">
@@ -103,17 +118,13 @@ function Card ({id, imageUrl, title, description,
             <h2 className="mb-4">{title}</h2>
             <p className="mb-3">{description}</p>
             <div className="mb-7">
-                <div>{advantages1}</div>
-                <div>{advantages2}</div>
-                <div>{advantages3}</div>
-                <div>{advantages4}</div>
-                <div>{advantages5}</div>
+                <div>{advantages}</div>
             </div>
             <div className="flex justify-between">
                 <div>Цена:</div>
                 <div>{price}</div>
             </div>
-    </div>
+        </div>
     );
 }
 

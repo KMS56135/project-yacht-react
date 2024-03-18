@@ -3,7 +3,7 @@ import photoblog2 from "../../assets/image/article-blog2.webp";
 
 function Blog() {
     return (
-        <div className="mb-28">
+        <>
             <article className="mb-28">
                 <div className="container px-14">
                     <div>
@@ -44,7 +44,7 @@ function Blog() {
                     </div>
                 </div>
             </article>
-        </div>
+        </>
     );
 }
 
