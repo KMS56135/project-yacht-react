@@ -82,19 +82,20 @@ function MainHeader() {
                     </a>
                 </div>
                 {/* Hamburger menu */}
+
                 <button className="ml-7 space-y-1 group lg:hidden">
                     <div className="w-6 h-1 bg-sky-700"></div>
                     <div className="w-6 h-1 bg-sky-700"></div>
                     <div className="w-6 h-1 bg-sky-700"></div>
                     {/* Menu */}
-                    <div className="bg-white w-screen pb-10 absolute -top-full group-focus:top-0 right-0 duration-150
+                    <button className="bg-white w-screen pb-10 absolute -top-full group-focus:top-0 right-0 duration-150
                     flex flex-col space-y-3 justify-end">
                         <button className=" px-10 py-8 relative ml-auto">
                             <div className="w-6 h-1 rotate-45 absolute bg-black"></div>
                             <div className="w-6 h-1 -rotate-45 absolute bg-black"></div>
                         </button>
                         {burgerlink}
-                    </div>
+                    </button>
                 </button>
             </div>
         </header>
