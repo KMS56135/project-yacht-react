@@ -69,7 +69,7 @@ function MainHeader() {
                         </svg>
                     </a>
                 </div>
-                <nav className="hidden lg:flex space-x-10">
+                <nav className="hidden lg:flex space-x-10 font-sans">
                     {linksContent}
                 </nav>
                 {/* Signin */}
@@ -84,9 +84,9 @@ function MainHeader() {
                 {/* Hamburger menu */}
 
                 <button className="ml-7 space-y-1 group lg:hidden">
-                    <div className="w-6 h-1 bg-sky-700"></div>
-                    <div className="w-6 h-1 bg-sky-700"></div>
-                    <div className="w-6 h-1 bg-sky-700"></div>
+                    <div className="w-6 h-1 bg-blue-700"></div>
+                    <div className="w-6 h-1 bg-blue-700"></div>
+                    <div className="w-6 h-1 bg-blue-700"></div>
                     {/* Menu */}
                     <button className="bg-white w-screen pb-10 absolute -top-full group-focus:top-0 right-0 duration-150
                     flex flex-col space-y-3 justify-end">
@@ -104,7 +104,7 @@ function MainHeader() {
 
 function Link({url, text}) {
     return (
-        <div><a href={url}>{text}</a></div>
+        <div><a className="hover:text-blue-200" href={url}>{text}</a></div>
     );
 }
 

@@ -92,7 +92,7 @@ function Rent() {
         });
     return  (
         <section className="mb-28">
-            <div className="container px-14">
+            <div className="container flex px-14 lg:flex flex-wrap justify-center gap-5">
                 {cardContent}
             </div>
         </section>
@@ -108,16 +108,16 @@ function Card ({id, imageUrl, title, description,
         )
     });
     return (
-        <div key={id} className="p-6">
+        <div key={id} className="rounded-lg shadow-blue-100 shadow-md flex flex-col justify-between p-6 lg:basis-80 grow ">
             <div className="mb-5">
                 <img className="object-cover w-full" src={imageUrl}></img>
             </div>
             <h2 className="mb-4">{title}</h2>
             <p className="mb-3">{description}</p>
-            <div className="mb-7">
+            <div className="mt-auto mb-2.5">
                 <div>{advantagesList}</div>
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-between ">
                 <div>Цена:</div>
                 <div>{price}</div>
             </div>

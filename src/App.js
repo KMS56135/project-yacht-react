@@ -4,7 +4,7 @@ import Hero from './components/Hero/Hero';
 import Article from './components/Blog/Blog';
 import Rent from './components/Rent/Rent';
 import Gallery from './components/Gallery/Gallery';
-import { Button } from "@material-tailwind/react";
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -13,9 +13,8 @@ function App() {
       <Hero />
       <Article />
       <Rent />
-        <Gallery />
-      <Button>Button</Button>
-      
+      <Gallery />
+      <Footer />
     </div>
   );
 }
