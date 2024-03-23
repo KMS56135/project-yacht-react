@@ -1,16 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Company from "./templates/Company";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
 import { ThemeProvider } from "@material-tailwind/react";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+  },
+  {
+    path: "./templates/Company.js",
+    element: <Company />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider>
-        <App />
+        <RouterProvider router={router} />
+        {/* <App /> */}
     </ThemeProvider>
   </React.StrictMode>
 );
