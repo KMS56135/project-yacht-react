@@ -7,7 +7,6 @@ import Gallery from './components/Gallery/Gallery';
 import Footer from './components/Footer/Footer';
 
 
-
 function App() {
   return (
     <div>

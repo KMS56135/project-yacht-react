@@ -1,5 +1,6 @@
 // import logo from "../../assets/image/logotype.svg";
 import {Link} from "react-router-dom";
+import Company from "../../templates/Company";
 
 function PageHeader() {
     return (
@@ -14,11 +15,11 @@ function PageHeader() {
 const links = [
     {
         text: "Наш клуб",
-        url: "#club"
+        url: "#club",
     },
     {
         text: "Компания",
-        url: <Link to="../../templates/Company"></Link>,
+        url: "/company",
     },
     {
         text: "Команды",
@@ -105,13 +106,13 @@ function MainHeader() {
 
 function LinkMenu({url, text}) {
     return (
-        <div><a className="transition-colors hover:text-blue-200" href={url}>{text}</a></div>
+        <div><Link className="transition-colors hover:text-blue-200" to={url}>{text}</Link></div>
     );
 }
 
 function LinkBurger({url, text}) {
     return (
-        <div className="flex justify-center w-full py-4 hover:bg-blue-100"><a className="text-blue-500" href={url}>{text}</a></div>
+        <div className="flex justify-center w-full py-4 hover:bg-blue-100"><a className="text-blue-500" to={url}>{text}</a></div>
     );
 }
 

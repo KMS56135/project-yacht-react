@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
-    path: "./templates/Company.js",
+    path: "/company",
     element: <Company />,
   },
 ]);
